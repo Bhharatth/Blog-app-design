@@ -18,10 +18,8 @@ const App = () => {
 
   return (
     <Router>
-      <Write/>
-      {/* <Single/> */}
-      {/* <Topbar/> */}
-      {/* <Switch>
+      <Topbar/>
+      <Switch> 
         <Route exact path="/" component={HomePage} />
         <Route path="/posts" component={Posts} />
         <Route path="/register">
@@ -32,7 +30,7 @@ const App = () => {
         <Route path="/write">{currentUser ? <Write /> : <Login />}</Route>
         <Route path="/settings">{currentUser ? <Settings /> : <Login />}</Route>
       </Switch>
-      <Footer /> */}
+      <Footer /> 
     </Router>
   );
 };
