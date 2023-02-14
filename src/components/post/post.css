@@ -1,0 +1,30 @@
+
+.card{
+    margin-right: 10px;
+}
+.postDate {
+    font-family: "Lora", serif;
+    display: flex;
+    flex-direction: row;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 400;
+    color: #423c3c;
+    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .postCat {
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #be9656;
+    line-height: 19px;
+    margin-top: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .link{
+    text-decoration: none;
+    color: rgb(51, 50, 50);
+  }

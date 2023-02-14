@@ -1,0 +1,7 @@
+.postsContainer {
+    display: flex;
+ flex-wrap: wrap;
+}
+.postsContainer{
+    margin-top: 20px;
+}

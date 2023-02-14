@@ -1,0 +1,41 @@
+.loginCOntainer{
+    height: 650px;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("https://images.pexels.com/photos/733856/pexels-photo-733856.jpeg?auto=compress&cs=tinysrgb&w=400");
+  background-size: cover;
+}
+.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+  }
+  
+  .loginTitle {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  label {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+  
+  .loginRegisterButton {
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: lightgray;
+    border-radius: 5px;
+  }

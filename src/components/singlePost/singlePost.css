@@ -1,0 +1,83 @@
+.card {
+    max-width: 500px;
+    max-height: 1500px;
+  }
+  
+  @media (min-width: 960px) {
+    .card {
+      max-width: 800px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .card {
+      max-width: 700px;
+    }
+  }
+  
+  .postCats {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .postCat {
+    background-color: lightgray;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  
+  .postDate {
+    font-size: 0.8em;
+    color: gray;
+  }
+  
+  @media (max-width: 500px) {
+    .postDate {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+
+  .singlePost {
+    flex: 9;
+  }
+  
+  .singlePostWrapper {
+    padding: 20px;
+    padding-right: 0;
+  }
+  
+  
+  
+  .singlePostTitle {
+    text-align: center;
+    margin: 10px;
+    font-size: 28px;
+    font-family: "Lora", sans-serif;
+  }
+  
+  
+  .singlePostInfo {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #be9656;
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  }
+  
+  .singlePostAuthor{
+    margin-left: 5px;
+  }
+  
+  .singlePostDesc {
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  
