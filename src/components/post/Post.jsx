@@ -4,42 +4,45 @@ import { Link } from 'react-router-dom';
 import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import "./post.css";
 
-const Post = ({img}) => {
+const Post = ({post}) => {
   return (
     <div className='post'>
         <Card sx={{ maxWidth: 345 }}
         className="card">
       <CardActionArea>
+        {post.photo && <CardMedia
+          component="img"
+          height="140"
+          image={post.photo}
+          alt="green iguana"
+        />}
         <CardMedia
           component="img"
           height="140"
-          image={img}
+          image={post.photo}
           alt="green iguana"
         />
         <CardContent>
         <div className="postCats">
-          <span className="postCat">
+          {post.categories.map((c)=> (
+            <span className="postCat">
             <Link className="link" to="/posts?cat=Music">
-              Music
+              {c.name}
             </Link>
           </span>
-          <span className="postCat">
-            <Link className="link" to="/posts?cat=Music">
-              Life
-            </Link>
-          </span>
+          ))}
+          
         </div>
           <Typography gutterBottom variant="h5" component="div">
-          <Link to="/post/abc" className="link">
-            Lorem ipsum dolor sit amet
+          <Link to={`/post/${post._id}`} className="link">
+            {post.title}
           </Link>
           </Typography>
           <hr />
-        <span className="postDate">1 hour ago <QueryBuilderIcon style={{ width: '15px' , marginLeft: "10px"}}/></span>
+        <span className="postDate">{new Date(post.createdAt).toDateString()}<QueryBuilderIcon style={{ width: '15px' , marginLeft: "10px"}}/></span>
         
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {post.desc}
           </Typography>
         </CardContent>
       </CardActionArea>

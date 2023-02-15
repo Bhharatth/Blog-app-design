@@ -1,15 +1,29 @@
 import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css"
 
 const Sidebar = () => {
+  const [cats, setCats] = useState([]);
+
+ useEffect(() => {
+  const getcats = async ()=> {
+    const res = await axios.get("/categories");
+    setCats(res.data)
+  }
+  getcats();
+  
+ }, []);
+ 
+ 
+
   return (
     <div className="sidebar">
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT ME</span>
-        {/* <img
+        <img
           src="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/11/aboutme.jpg"
           alt=""
         />
@@ -18,7 +32,7 @@ const Sidebar = () => {
           recusandae cumque voluptate maiores in officiis nemo, iure rerum
           delectus id dicta harum corrupti facere quia nesciunt odit
           exercitationem ad.
-        </p> */}
+        </p>
         <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
@@ -45,31 +59,14 @@ const Sidebar = () => {
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ui className="sidebarList">
-          <li className="sidebarListItem">
-            <Link className="link" to="/posts?cat=Life">
-              Life
+          {cats.map((c)=> (
+            <li className="sidebarListItem">
+            <Link className="link" to={`/?cat=${c.name}`}>
+              {c.name}
             </Link>
           </li>
-          <li className="sidebarListItem">
-            <Link className="link" to="/posts?cat=Music">
-              Music
-            </Link>
-          </li>
-          <li className="sidebarListItem">
-            <Link className="link" to="/posts?cat=Sport">
-              Sport
-            </Link>
-          </li>
-          <li className="sidebarListItem">
-            <Link className="link" to="/posts?cat=Tech">
-              Tech
-            </Link>
-          </li>
-          <li className="sidebarListItem">
-            <Link className="link" to="/posts?cat=Cinema">
-              Cinema
-            </Link>
-          </li>	
+          ))}
+          
         </ui>
       </div>
       <div className="sidebarItem">

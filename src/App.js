@@ -14,7 +14,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Post from "./components/post/Post";
 import ResponsiveAppBar from "./components/TopBar/Topbar";
 const App = () => {
-  const currentUser = true;
+  const currentUser = false;
 
   return (
     <Router>
